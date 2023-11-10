@@ -15,6 +15,5 @@ sudo usermod -aG sudo dev
 echo "dev:dev" | sudo chpasswd
 echo "**** Adding dev user ... END"
 
-echo "**** Installing dev software..."
-sudo apt-get install git-all libfuse2
+sudo shutdown -r now
 echo "**** End installing Ubuntu, etc"

@@ -88,5 +88,7 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision "shell", type: "shell", path: "scripts/shell.sh"
+  config.vm.provision "setup", type: "shell", path: "scripts/setup.sh"
+
+  config.vm.provision "tools", type: "shell", path: "scripts/tools.sh"
 end
