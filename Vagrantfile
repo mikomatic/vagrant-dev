@@ -60,10 +60,20 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
     vb.name = "Development VM"
-    # Customize the amount of memory on the VM:
-    vb.memory = "8192"
-    # Customize the amount of cpu on the VM:
-    vb.cpus = "4"
+    # Customize the amount of memory on the VM: 20Go
+    vb.memory = "20480"
+    # Customize the amount of cpu on the VM: 8
+    vb.cpus = "8"
+    # https://developer.hashicorp.com/vagrant/docs/providers/virtualbox/configuration#vboxmanage-customizations
+    # https://www.virtualbox.org/manual/ch08.html
+    # Setup recommended graphics controller to the recommended one
+    vb.customize ['modifyvm', :id, '--graphicscontroller', 'vmsvga']
+    # Clipboard
+    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    # Drag and drop
+    vb.customize ['modifyvm', :id, '--drag-and-drop', 'bidirectional']
+    # Video configuration
+    vb.customize ['modifyvm', :id, '--vram', '32']
   end
   #
   # View the documentation for the provider you are using for more
