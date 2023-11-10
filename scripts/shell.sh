@@ -16,5 +16,5 @@ echo "dev:dev" | sudo chpasswd
 echo "**** Adding dev user ... END"
 
 echo "**** Installing dev software..."
-sudo apt-get install git-all
+sudo apt-get install git-all libfuse2
 echo "**** End installing Ubuntu, etc"
