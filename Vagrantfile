@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/jammy64"
 
   # Configure custom size disk
-  config.vm.disk :disk, size: "100GB", primary: true
+  #config.vm.disk :disk, size: "100GB", primary: true
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -63,9 +63,9 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.name = "Development VM"
     # Customize the amount of memory on the VM: 20Go
-    vb.memory = "20480"
+    vb.memory = "4096"
     # Customize the amount of cpu on the VM: 8
-    vb.cpus = "8"
+    vb.cpus = "4"
     # https://developer.hashicorp.com/vagrant/docs/providers/virtualbox/configuration#vboxmanage-customizations
     # https://www.virtualbox.org/manual/ch08.html
     # Setup recommended graphics controller to the recommended one
