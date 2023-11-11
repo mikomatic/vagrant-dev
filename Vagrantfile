@@ -88,7 +88,8 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.provision "setup", type: "shell", path: "scripts/setup.sh"
-
-  config.vm.provision "tools", type: "shell", path: "scripts/tools.sh"
+  config.vm.provision "setup", type: "shell", path: "provisioners/setup.sh"
+  config.vm.provision "chrome", type: "shell", path: "provisioners/install-chrome.sh"
+  config.vm.provision "docker", type: "shell", path: "provisioners/install-docker.sh"
+  config.vm.provision "tools", type: "shell", path: "provisioners/additional-tools.sh"
 end
